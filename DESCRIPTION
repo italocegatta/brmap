@@ -1,0 +1,11 @@
+Package: brmap
+Title: Poligonos de unidades territoriais do Brasil em Simple Feature
+Version: 0.0.2
+Authors@R: person("Italo", "Cegatta", email = "italocegatta@gmail.com", role = c("aut", "cre"))
+Description: Mapa do territorio brasileiro nas escalas: federal, regional, estadual e municipal.
+Depends: R (>= 3.3.2),
+    sf
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
