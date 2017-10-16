@@ -75,11 +75,11 @@ brmap_estado
 ```
 
 ``` r
-brmap_cidade
-#> Simple feature collection with 5570 features and 5 fields
+#> brmap_municipio
+#> Simple feature collection with 5567 features and 5 fields
 #> geometry type:  MULTIPOLYGON
 #> dimension:      XY
-#> bbox:           xmin: -73.99045 ymin: -33.75118 xmax: -28.83591 ymax: 5.271841
+#> bbox:           xmin: -73.99045 ymin: -33.75118 xmax: -34.79288 ymax: 5.271841
 #> epsg (SRID):    4674
 #> proj4string:    +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs
 #> First 1000 features:
