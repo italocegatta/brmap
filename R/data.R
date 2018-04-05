@@ -4,7 +4,7 @@
 #'
 #' \itemize{
 #'   \item Escala operacional: 1:250.000.
-#'   \item Projeção geogrefica: LAT/LONG.
+#'   \item Projeção geografica: LAT/LONG.
 #'   \item Sistema Geodesico de Referencia: SIRGAS 2000.
 #' }
 #'
@@ -21,7 +21,7 @@
 #'
 #' \itemize{
 #'   \item Escala operacional: 1:250.000.
-#'   \item Projeção geogrefica: LAT/LONG.
+#'   \item Projeção geografica: LAT/LONG.
 #'   \item Sistema Geodesico de Referencia: SIRGAS 2000.
 #' }
 #'
@@ -38,7 +38,7 @@
 #'
 #' \itemize{
 #'   \item Escala operacional: 1:250.000.
-#'   \item Projeção geogrefica: LAT/LONG.
+#'   \item Projeção geografica: LAT/LONG.
 #'   \item Sistema Geodesico de Referencia: SIRGAS 2000.
 #' }
 #'
@@ -55,7 +55,7 @@
 #'
 #' \itemize{
 #'   \item Escala operacional: 1:250.000.
-#'   \item Projeção geogrefica: LAT/LONG.
+#'   \item Projeção geografica: LAT/LONG.
 #'   \item Sistema Geodesico de Referencia: SIRGAS 2000.
 #' }
 #'
