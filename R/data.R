@@ -10,7 +10,7 @@
 #'
 #' @format Objeto Simple Feature
 #'
-#' @source \url{ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2015/Brasil/BR/BR.zip}
+#' @source \url{ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2016/Brasil/BR/BR.zip}
 #'
 "brmap_brasil"
 
@@ -27,7 +27,7 @@
 #'
 #' @format Objeto Simple Feature
 #'
-#' @source \url{ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2015/Brasil/BR/BR.zip}
+#' @source \url{ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2016/Brasil/BR/BR.zip}
 #'
 "brmap_regiao"
 
@@ -44,7 +44,7 @@
 #'
 #' @format Objeto Simple Feature
 #'
-#' @source \url{ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2015/Brasil/BR/BR.zip}
+#' @source \url{ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2017/Brasil/BR/br_unidades_da_federacao.zip}
 #'
 "brmap_estado"
 
@@ -61,6 +61,6 @@
 #'
 #' @format Objeto Simple Feature
 #'
-#' @source \url{ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2015/Brasil/BR/BR.zip}
+#' @source \url{ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2017/Brasil/BR/br_municipios.zip}
 #'
 "brmap_municipio"
