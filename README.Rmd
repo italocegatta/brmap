@@ -1,0 +1,69 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# brmap
+
+Polígonos de unidades territoriais do Brasil em R Simple Feature
+
+## Fontes
+
+*  Limites de município e estado: ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2017/Brasil/BR
+*  Limites de região e brasil: ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2016/Brasil/BR/BR.zip
+*  Códigos e nomes: https://servicodados.ibge.gov.br/api/v1/localidades/municipios
+*  Coordenadas dos municípios: ftp://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/localidades/Shapefile_SHP/
+
+## Instalação
+
+``` r
+if (!require("devtools")) install.packages("devtools")
+devtools::install_github("italocegatta/brmap")
+```
+
+## Uso
+
+```{r message=FALSE, warning=FALSE}
+library(tibble)
+```
+
+```{r}
+library(brmap)
+```
+
+```{r}
+brmap_brasil
+```
+
+```{r}
+brmap_regiao
+```
+
+```{r}
+brmap_estado
+```
+
+```{r}
+brmap_municipio
+```
+
+Cada objeto tem uma versão simplificada, onde foi mantido apenas 10% dos vertices, com o objetivo de deixar a renderização dos mapa mais rápida.
+
+```{r}
+pryr::object_size(brmap_municipio)
+pryr::object_size(brmap_municipio_simples)
+```
+
+```{r, dpi=200}
+plot(brmap_regiao_simples["regiao_sigla"])
+```
+
