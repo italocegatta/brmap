@@ -2,6 +2,7 @@ library(tidyverse)
 library(sf)
 library(rmapshaper)
 library(mapview)
+library(readxl)
 
 # ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2017/
 # ftp://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2015/
@@ -36,13 +37,13 @@ cod_estados <- "https://servicodados.ibge.gov.br/api/v1/localidades/estados" %>%
   ) %>%
   dplyr::as_tibble()
 
-municipios_lat_lon <- read_csv2("data-raw/municipio_lat_lon.csv")
+municipios_lat_lon <- read_excel("data-raw/municipio_lat_lon.xlsx")
 
 
 # municipio ---------------------------------------------------------------
 
 # add depois fernando de noronha??
-mun <- read_sf("data-raw/br_municipios/BRMUE250GC_SIR.shp") %>%
+mun <- read_sf("data-raw/BR/BRMUE250GC_SIR.shp") %>%
   st_set_crs(4674)
 
 mun_raw <- mun %>%
@@ -77,16 +78,21 @@ brmap_municipio <- mun_area_pol %>%
   left_join(cod_municipios) %>%
   left_join(municipios_lat_lon) %>%
   mutate(municipio_cod = as.integer(municipio_cod)) %>%
-  select(municipio_cod, estado_cod, municipio_nome, lon, lat, alt) %>%
+  select(municipio_cod, estado_cod, municipio_nome, capital, lon, lat, alt) %>%
   arrange(municipio_cod)
 
-# brmap::brmap_municipio
-# brmap_municipio
+# brmap::brmap_municipio %>% pryr::object_size()
+# brmap_municipio %>% select(municipio_cod) %>%  pryr::object_size()
+
+# teste <- brmap_municipio %>%
+#   ms_simplify(keep = 0.95, keep_shapes = TRUE)
+#
+# teste %>%  pryr::object_size()
 
 usethis::use_data(brmap_municipio, overwrite = TRUE, compress = "xz")
 
 brmap_municipio_simples <- brmap_municipio %>%
-  ms_simplify(keep = 0.1, keep_shapes = TRUE) %>%
+  ms_simplify(keep = 0.2, keep_shapes = TRUE) %>%
   as_tibble() %>%
   st_as_sf()
 
@@ -97,7 +103,7 @@ rm(mun, mun_raw, mun_area_pol, mun_mais_1pol, brmap_municipio, brmap_municipio_s
 
 # estado ------------------------------------------------------------------
 
-est <- read_sf("data-raw/br_unidades_da_federacao/BRUFE250GC_SIR.shp") %>%
+est <- read_sf("data-raw/BR/BRUFE250GC_SIR.shp") %>%
   st_set_crs(4674)
 
 est_raw <- est %>%
@@ -134,7 +140,7 @@ rm(est, est_raw, est_area_pol, brmap_estado, brmap_estado_simples)
 
 # regiao ----------------------------------------------------------------
 
-reg <- read_sf("data-raw/br/BRUFE250GC_SIR.shp") %>%
+reg <- read_sf("data-raw/BR/BRUFE250GC_SIR.shp") %>%
   st_set_crs(4674)
 
 reg_raw <- reg %>%
@@ -184,7 +190,7 @@ rm(reg, reg_raw, reg_area_pol, brmap_regiao, brmap_regiao_simples)
 
 # brasil ------------------------------------------------------------------
 
-br <- read_sf("data-raw/br/BRUFE250GC_SIR.shp") %>%
+br <- read_sf("data-raw/BR/BRUFE250GC_SIR.shp") %>%
   st_set_crs(4674)
 
 br_raw <- br %>%
